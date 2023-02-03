@@ -4,6 +4,9 @@ Run the following command to quickly setup your workstation.
 It will add a SSH public key to your SecDim ID
 and then installs `docker`, `make`, and `git`.
 
-`bash -c "$(curl -sSfL https://raw.githubusercontent.com/secdim/play-setup-script/main/setup.sh)"`
+[source,bash]
+----
+bash -c "$(curl -sSfL https://raw.githubusercontent.com/secdim/play-setup-script/main/setup.sh)"
+----
 
 You can then play https://play.secdim.com[SecDim Play] challenge locally.
