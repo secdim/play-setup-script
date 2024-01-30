@@ -99,7 +99,7 @@ upload_ssh_key() {
     # Generate SSH key if default not exist
     if [ ! -f "${SSH_KEY_DEFAULT}" ]; then
         log_info "Generate a pair of SSH keys"
-        ssh-keygen -b 2048 -t rsa -f "${SSH_KEY_DEFAULT%????}" -q -N ""
+        ssh-keygen -b 4096 -t rsa -f "${SSH_KEY_DEFAULT%????}" -q -N ""
     fi
     log_info "Using default SSH public key: ${SSH_KEY_DEFAULT}"
     SSH_KEY="${SSH_KEY:-$SSH_KEY_DEFAULT}"
@@ -142,7 +142,7 @@ ask_have_secdim_id () {
     answer="${answer:-y}"
     case $answer in
         [Yy]* ) ;;
-        [Nn]* ) 
+        [Nn]* )
             log_info "Go to https://id.secdim.com and register an account"
             log_info "Once you are done, press Enter to continue ..."
             read -r answer;;
@@ -154,7 +154,7 @@ ask_login_oauth () {
     read -r answer
     answer="${answer:-n}"
     case $answer in
-        [Yy]* ) 
+        [Yy]* )
             log_info "Go to https://id.secdim.com, add or import your SSH public key"
             log_info "Once you are done, press Enter to continue ..."
             read -r answer;;
